@@ -1,0 +1,9 @@
+server:
+  port: 8080
+
+spring:
+  jpa:
+    # API 호출 시, SQL 문 콘솔에 출력
+    show-sql: true
+    # DDL 정의 시 DB의 고유의 기능 사용
+    generate-ddl: true
