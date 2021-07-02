@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="kr.me.seohuipark.noblewayback.sample.repository.rdbms.BoardSqlMapper">
+    <insert id = "createBoardMyBatis">
+        INSERT INTO
+            board(title, contents)
+        VALUES
+            (#{title}, #{contents})
+    </insert>
+
+    <select id = "getAllBoardsMyBatis" resultType = "kr.me.seohuipark.noblewayback.sample.model.rdbms.BoardDto">
+        SELECT
+            bd.*
+        FROM
+            board bd
+    </select>
+
+    <select id = "getBoardByIdMyBatis" resultType = "kr.me.seohuipark.noblewayback.sample.model.rdbms.BoardDto">
+        SELECT
+            bd.*
+        FROM
+            board bd
+        WHERE
+            bd.id = #{id}
+    </select>
+
+    <update id = "updateBoardMyBatis">
+        UPDATE
+            board
+        SET
+            title = #{title},
+            contents = #{contents}
+        WHERE
+            id = #{id}
+    </update>
+
+    <delete id = "deleteBoardMyBatis">
+        DELETE
+        FROM
+            board
+        WHERE
+            id = #{id}
+    </delete>
+</mapper>

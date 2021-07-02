@@ -8,6 +8,7 @@ class NoblewayBackApplicationTests {
 
     @Test
     fun contextLoads() {
+        val args = arrayOf("Test")
+        main(args)
     }
-
 }
